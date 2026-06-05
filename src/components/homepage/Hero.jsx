@@ -3,7 +3,7 @@ import { FiSearch, FiMapPin, FiBriefcase } from 'react-icons/fi';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-150 w-full  text-white flex flex-col items-center justify-center px-4 overflow-hidden select-none">
+    <section className="relative w-full pt-40 text-white flex flex-col items-center justify-center px-4 overflow-hidden select-none">
       {/* Background ambient glow effect */}
 
 

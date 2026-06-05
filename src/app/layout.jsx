@@ -1,28 +1,25 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Navbar from "@/components/shared/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
+const manropeFont = Manrope({
+
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
 export const metadata = {
   title: "NextHire",
-  description: "",
+  description: "NextHire - Your Gateway to the Future of Work. Discover top talent and world-class companies in one place. Find your dream job today!",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={` ${manropeFont.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
 <Navbar/>
