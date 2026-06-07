@@ -1,4 +1,5 @@
 import FeaturesPage from "@/components/homepage/Features";
+import Footer from "@/components/homepage/Footer";
 import Hero from "@/components/homepage/Hero";
 import Stats from "@/components/homepage/Stats";
 
@@ -14,7 +15,7 @@ const HomePage = () => {
 <Stats/>
 </section>
 <FeaturesPage/>
- 
+ <Footer/>
     </section>
   );
 };
