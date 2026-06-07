@@ -31,7 +31,7 @@ const statsData = [
   },
 ];
   return (
-    <section className='max-w-7xl mx-auto w-[90%] py-20 lg:py-40 xl:py-50 space-y-12'>
+    <section className='max-w-7xl mx-auto w-[90%] pb-10 pt-20 lg:pt-40 xl:pt-50 space-y-12'>
 
 <h2 className='max-w-2xl mx-auto text-center text-3xl md:text-[40px] font-medium'>Assisting over 15,000 job seekers find their dream positions.</h2>    
 
@@ -44,7 +44,7 @@ const statsData = [
             return (
               <div
                 key={stat.id}
-                className="bg-[#111111] border border-zinc-800/50 rounded-2xl p-8 flex flex-col justify-between min-h-55 transition-all duration-300 hover:border-zinc-700 hover:bg-[#141414]"
+                className="bg-linear-to-b from-[#010102]  to-[#313131] border border-[#ffffff]/10  rounded-2xl p-8 flex flex-col justify-between min-h-55 transition-all duration-300 hover:border-zinc-700 hover:bg-[#111111]"
               >
                 {/* আইকন সেকশন */}
                 <div className="text-zinc-400 w-fit text-2xl">
