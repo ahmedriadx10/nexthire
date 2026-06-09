@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 const MyNavlink = ({path,children}) => {
  const pathName=usePathname()
 
-console.log(pathName,path)
+
 
  
  
@@ -13,6 +13,6 @@ console.log(pathName,path)
       {children}
     </Link>
   );
-};2
+};
 
 export default MyNavlink;
