@@ -1,24 +1,66 @@
 "use client";
 
 
-import {Button, FieldError, Form, Input, Label, Radio, RadioGroup, TextField} from "@heroui/react";
+import { authClient } from "@/lib/auth-client";
+import {Button, FieldError, Form, Input, Label, Radio, RadioGroup, Spinner, TextField} from "@heroui/react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export function LoginForm() {
-
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
   const [eye, setEye] = useState(false);
   const eyeClick = () => {
     setEye(!eye);
   };
-const handleSubmit=(e)=>{
+const handleSubmit=async(e)=>{
 e.preventDefault()
 
 const formData=new FormData(e.currentTarget)
 
 const exactFormData=Object.fromEntries(formData.entries())
 
-console.log(exactFormData)
+
+const result=await authClient.signIn.email({
+
+  ...exactFormData
+},{
+  onRequest:()=>{
+    setLoading(true)
+  }
+})
+
+
+
+if(result?.data?.user){
+
+setLoading(false)
+  toast.success("Login sucessfull")
+router.push("/")
+}
+
+
+
+if(result?.error?.message){
+
+
+  setLoading(false)
+  toast.error(result?.error?.message)
+}
+
+else if(result?.error?.statusText){
+
+  setLoading(false)
+  toast.error(result?.error?.statusText)
+}
+
+
+
+
+
+
 
 
 
@@ -82,7 +124,7 @@ console.log(exactFormData)
       <div className="flex gap-2">
         <Button type="submit" fullWidth>
        
-        Login
+ {loading?<Spinner color="current"></Spinner>:'Login'}
         </Button>
  
       </div>
